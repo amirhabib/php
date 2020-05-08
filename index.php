@@ -1,40 +1,30 @@
 <?php
 
-    $colors = array('red', 'green');  //  legacy, create an array using a function
+    $dictionary = [];
 
-    //  Add more items to an array
-    $colors[] = 'blue';
-    $colors[] = 'yellow';
+    $dictionary['one'] = 'אחד';
+    $dictionary['two'] = 'שתיים';
+    $dictionary['ten'] = 'עשר';
 
+    $dictionary[] = 'שלום עולם';
 
-    //  access an item by its index
-    echo $colors[1];            //  green
-    //  echo $colors[7];            //  index not found
+    $arr = [];
+    $arr[1] = 'hi';
+    $arr[0] = 'world';
 
-    $colors[10] = 'pink';       //  assign value to an index that does not exist, is OK!
+    //  Loop through keys and values
+    foreach($dictionary as $english => $hebrew)
+        echo "$english in Hebrew is $hebrew" . "<br>";
 
-    //  Length of an array
-    $array_length = count($colors);
-    echo "Length of array is $array_length";
+    //  Loop through value
+    foreach($dictionary as $xyz)
+        echo "$xyz" . "<br>";
 
-    //  Loop through an array with for
-    echo "<ul>";
-    for($i=0; $i < $array_length; $i++)
-        echo "<li>" . $colors[$i] . "</li>";
-    echo "</ul>";
+    //  Return keys as an array
+    $keys = array_keys( $dictionary );
 
+    print_r( $keys );
+    
+    print_r( $dictionary );
 
-    echo "<hr>";
-
-    //  Loop through an array with foreach
-    foreach($colors as $color)
-        echo $color . " ";
-
-    echo "<hr>";
-
-    //  Loop through an array with foreach
-    foreach($colors as $key => $value)
-        echo $key . "=" . $value . "<br>";
-
-    //  print an array for debuggning
-    print_r( $colors );
+    print_r( $arr ); 
