@@ -22,6 +22,8 @@
         //     echo "<div>";
         //     echo "Due to COVID-19 please wash your hands.";
         //     echo "</div>";
+        // } else {
+        //     echo "<p>Good to see you here</p>";
         // }
 
     ?>
@@ -37,6 +39,10 @@
         <div>
             Due to COVID-19 please wash your hands.
         </div>
+    <?php } else { ?>
+        <p>
+            Good to see you here
+        </p>
     <?php } ?>
 
 
@@ -45,6 +51,8 @@
         <div>
             Due to COVID-19 please wash your hands.
         </div>
+    <?php else: ?>
+        <p>Good to see you here</p>
     <?php endif ?>
 
 </body>
