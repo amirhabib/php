@@ -4,8 +4,9 @@ class Person {
 
     public  $name, 
             $age, 
-            $gender,
             $email;
+
+    private $gender;
 
     function __construct($name = 'nobody')
     {
@@ -23,6 +24,7 @@ class Person {
     }
 
 
+
     function getGenderClassName() {
         $gender_class_name = "";
 
@@ -33,4 +35,25 @@ class Person {
 
         return $gender_class_name;
     }
+
+
+
+    /* Magic methods */
+    function __set( $prop, $value ) {
+
+        if($prop == 'gender') {
+            
+            $accepted_values = ['F', 'M', 'O'];
+            if(in_array($value,$accepted_values)) {
+                $this->gender = $value;
+            }
+        }
+        
+    }
+
+    function __get( $prop ) {
+        if($prop == 'gender') 
+            return $this->gender;
+    }
+    
 }
