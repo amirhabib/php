@@ -1,10 +1,11 @@
 <?php
 
-function multiply( $x, $y = 1) {
+$greeting = "Hello world how are you today?";
 
-    return $x * $y;
-}
+$words = explode(" ", $greeting);
 
-echo Multiply(3,5);
-echo "<br>";
-echo multiply(3);
+print_r( $words );
+
+$greeting_with_underscore = implode("_", $words);
+
+echo $greeting_with_underscore;
