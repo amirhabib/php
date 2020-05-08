@@ -1,30 +1,42 @@
 <?php
 
-    $dictionary = [];
+    $library = [];
 
-    $dictionary['one'] = 'אחד';
-    $dictionary['two'] = 'שתיים';
-    $dictionary['ten'] = 'עשר';
+    $library['php'] = [
+        "php and Mysql by O'reilly",
+        "PHP 7 by Wrox",
+        "Professional PHP by Wrox"
+    ];
 
-    $dictionary[] = 'שלום עולם';
 
-    $arr = [];
-    $arr[1] = 'hi';
-    $arr[0] = 'world';
+    $library['css'] = [
+        'CSS3 without a framework',
+        'Bootstrap 5',
+        'CSS Cookbook'
+    ];
 
-    //  Loop through keys and values
-    foreach($dictionary as $english => $hebrew)
-        echo "$english in Hebrew is $hebrew" . "<br>";
-
-    //  Loop through value
-    foreach($dictionary as $xyz)
-        echo "$xyz" . "<br>";
-
-    //  Return keys as an array
-    $keys = array_keys( $dictionary );
-
-    print_r( $keys );
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
     
-    print_r( $dictionary );
+    <h1>Books</h1>
 
-    print_r( $arr ); 
+    <?php foreach($library as $category => $books) : ?>
+    <div>
+        <h2><?= $category; ?></h2>
+        <ul>
+            <?php foreach($books as $bookName) : ?>
+            <li><?= $bookName ?></li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+    <?php endforeach; ?>
+
+</body>
+</html>
