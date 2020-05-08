@@ -1,30 +1,22 @@
 <?php
 
-// $password = '12345';
+class Person {
 
-// $secretKey = 'my-scecret-key';
+    public  $name, 
+            $age, 
+            $email;
 
-// echo "Hash stored in database :" . md5( $password . $secretKey);
-// echo "<br>";
+    function sayHi() {
 
-// $input_password = '12345';
-// $input_username = 'amir';
+        return "Hi my name is $this->name";
+    }
+}
 
-// echo "Hash created by input :" . md5( $input_password . $secretKey);
-// echo "<br>";
+$p1  = new Person;
+$p2 =  new Person;
 
-// $sql = "SELECT * from users WHERE username='$input_username' AND password='" . md5($input_password . $secretKey ) . "'";
+$p1->name = 'John';
+$p2->name = 'Jane';
 
-// echo $sql;
-// echo "<br>";
-
-$message = 'Hello Amir how are you';
-$phrase = "2020";
-
-$data = [
-    "message" => $message,
-    "scurity_check" => md5( $message . $phrase )
-];
-
-
-print_r( $data );
+echo $p1->sayHi() . "<br>";
+echo $p2->sayHi() . "<br>";
