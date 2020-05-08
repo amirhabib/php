@@ -1,59 +1,40 @@
 <?php
 
-        $covide_notice_active = false;
+    $colors = array('red', 'green');  //  legacy, create an array using a function
 
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Hello there</h1>
-
-    <?php
+    //  Add more items to an array
+    $colors[] = 'blue';
+    $colors[] = 'yellow';
 
 
-        //  OPTION 1
+    //  access an item by its index
+    echo $colors[1];            //  green
+    //  echo $colors[7];            //  index not found
 
-        // if($covide_notice_active) {
-        //     echo "<div>";
-        //     echo "Due to COVID-19 please wash your hands.";
-        //     echo "</div>";
-        // } else {
-        //     echo "<p>Good to see you here</p>";
-        // }
+    $colors[10] = 'pink';       //  assign value to an index that does not exist, is OK!
 
-    ?>
+    //  Length of an array
+    $array_length = count($colors);
+    echo "Length of array is $array_length";
 
-
-    <?php
-
-        //  OPTION 2 
-
-        if($covide_notice_active) {
-
-    ?>
-        <div>
-            Due to COVID-19 please wash your hands.
-        </div>
-    <?php } else { ?>
-        <p>
-            Good to see you here
-        </p>
-    <?php } ?>
+    //  Loop through an array with for
+    echo "<ul>";
+    for($i=0; $i < $array_length; $i++)
+        echo "<li>" . $colors[$i] . "</li>";
+    echo "</ul>";
 
 
+    echo "<hr>";
 
-    <?php if($covide_notice_active) : ?>
-        <div>
-            Due to COVID-19 please wash your hands.
-        </div>
-    <?php else: ?>
-        <p>Good to see you here</p>
-    <?php endif ?>
+    //  Loop through an array with foreach
+    foreach($colors as $color)
+        echo $color . " ";
 
-</body>
-</html>
+    echo "<hr>";
+
+    //  Loop through an array with foreach
+    foreach($colors as $key => $value)
+        echo $key . "=" . $value . "<br>";
+
+    //  print an array for debuggning
+    print_r( $colors );
