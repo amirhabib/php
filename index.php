@@ -1,7 +1,30 @@
 <?php
 
-$greeting = "Hello world how are you today?";
+// $password = '12345';
 
-$new_greeting = str_replace("world", "there", $greeting);
+// $secretKey = 'my-scecret-key';
 
-echo $new_greeting;
+// echo "Hash stored in database :" . md5( $password . $secretKey);
+// echo "<br>";
+
+// $input_password = '12345';
+// $input_username = 'amir';
+
+// echo "Hash created by input :" . md5( $input_password . $secretKey);
+// echo "<br>";
+
+// $sql = "SELECT * from users WHERE username='$input_username' AND password='" . md5($input_password . $secretKey ) . "'";
+
+// echo $sql;
+// echo "<br>";
+
+$message = 'Hello Amir how are you';
+$phrase = "2020";
+
+$data = [
+    "message" => $message,
+    "scurity_check" => md5( $message . $phrase )
+];
+
+
+print_r( $data );
