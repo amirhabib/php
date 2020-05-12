@@ -1,7 +1,9 @@
 <?php
 
-    $name = isset($_GET['name']) ? $_GET['name'] : 'Stranger';
-    $age = isset($_GET['age']) ? $_GET['age'] : null;
+    $name = isset($_POST['name']) ? $_POST['name'] : 'Stranger';
+    $age = isset($_POST['age']) ? $_POST['age'] : null;
+
+    print_r($_POST);
 
 ?>
 <h1>Hello <?= $name ?></h1>
