@@ -6,9 +6,31 @@
                 $name,
                 $price;
 
-        function __construct()
+        static function getAll() {
+
+            //  Declare $db_link as a globl variable 
+            global $db_link;
+
+            //  all products
+            $data = [];
+
+            $sql = "SELECT * FROM products";
+
+            if($result = mysqli_query($db_link, $sql)) {
+
+                while( $row = mysqli_fetch_assoc($result ) ) 
+                    $data[] = $row;
+            }
+
+
+            return $data;
+
+        }
+
+        function __construct($id = null)
         {
-            
+            $this->id = $id;
+            $this->read_from_db();
         }
 
         //  Read data from database
