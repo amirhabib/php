@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="read-data/" method="GET">
+
+        <div>
+            <label>Name</label>
+            <input type="text" name="name" >
+        </div>
+
+        <div>
+            <label>Age</label>
+            <input type="text" name="age" >
+        </div>
+
+        <div>
+            <label>City</label>
+            <select name="city">
+                <option>Haifa</option>
+                <option>Tel Aviv</option>
+            </select>
+        </div>
+
+        <div>
+            <input type="checkbox" name="option_1" value="yes"> <lable>Option One</lable> <br>
+            <input type="checkbox" name="option_2" value="yes"> <lable>Option Two</lable> <br>
+            <input type="checkbox" name="option_3" value="yes"> <lable>Option Three</lable> <br>
+        </div>
+
+        <div>
+            <label>Choose your gift:</label> <br>
+            <input type="radio" name="gift" value="gift_1"> Gift 1 <br>
+            <input type="radio" name="gift" value="gift_2"> Gift 2 <br>
+            <input type="radio" name="gift" value="gift_3"> Gift 3 <br>
+        </div>
+
+
+        <div>
+            <button type="submit">Send Data</button>
+        </div>
+
+    </form>
+</body>
+</html>
